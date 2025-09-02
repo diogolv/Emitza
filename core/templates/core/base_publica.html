@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Emitza{% endblock %} - Soluções em Infraestrutura e IA</title>
+    <meta name="description" content="Emitza oferece soluções completas em infraestrutura de TI, segurança, monitoramento com Zabbix e projetos de Inteligência Artificial.">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'imagens/favicon.ico' %}" sizes="any">
+    <link rel="apple-touch-icon" href="{% static 'imagens/apple-touch-icon.png' %}">
+    <script src="https://kit.fontawesome.com/3d598f6891.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'imagens/logo-emitza.png' %}" alt="Logo da Emitza">
+                <span>Emitza</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'servicos' %}">Serviços</a></li>
+                    <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                    <li><a href="{% url 'contato' %}">Contato</a></li>
+                    <li><a href="{% url 'login' %}" class="login-button">Login</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'imagens/logo-emitza.png' %}" alt="Logo da Emitza" class="footer-logo">
+                </a>
+                <p>Sua parceira estratégica em tecnologia, oferecendo tranquilidade em TI para empresas e residências com soluções de infraestrutura, segurança e suporte especializado.</p>
+            </div>
+
+          <!--  <div class="footer-links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="{% url 'servicos' %}">Segurança de Rede</a></li>
+                    <li><a href="{% url 'servicos' %}">Gestão de Servidores</a></li>
+                    <li><a href="{% url 'servicos' %}">Suporte Residencial</a></li>
+                    <li><a href="{% url 'servicos' %}">Redes e Conectividade</a></li>
+                </ul>
+            </div>-->
+
+            <div class="footer-links">
+                <h4>Mapa do Site</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">Início</a></li>
+                    <li><a href="{% url 'servicos' %}">Serviços</a></li>
+                    <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                    <li><a href="{% url 'contato' %}">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>(62) 98222-4862</p>         
+                <p>comercial@emitza.com</p>
+                <p>Goiânia, GO - Brasil</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; {% now "Y" %} Emitza - Todos os direitos reservados.</p>
+            <div class="footer-social">
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/5562982224862" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</body>
+</html>

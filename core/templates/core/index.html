@@ -1,0 +1,77 @@
+{% extends 'core/base_publica.html' %}
+{% load static %}
+{% block title %}Página Inicial{% endblock %}
+{% block content %}
+    <section class="hero hero-bg">
+        <div class="container">
+            <h1 data-aos="fade-up">Tecnologia e Inovação para Transformar seu Negócio</h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Desenvolvemos soluções sob medida que impulsionam o crescimento e a eficiência da sua empresa.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <a href="{% url 'servicos' %}" class="cta-button">Conheça Nossas Soluções</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Nossas Soluções</h2>
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="empresas">Para Empresas e Escritórios</button>
+                <button class="tab-button" data-tab="residencial">Para Sua Casa e Home Office</button>
+            </div>
+            <div class="tab-content-wrapper">
+                <div id="empresas" class="tab-content active">
+                    <p class="category-description">Soluções completas para garantir a estabilidade, segurança e eficiência da infraestrutura de TI do seu negócio.</p>
+                    <div class="services-grid">
+                        <div class="service-card"> <i class="fa-solid fa-server"></i> <h3>Gestão de Servidores</h3> <p>Monitoramento proativo com Zabbix para garantir a saúde e performance de servidores físicos e virtuais.</p> </div>
+                        <div class="service-card"> <i class="fa-solid fa-shield-halved"></i> <h3>Segurança de Rede</h3> <p>Administração de Firewall, antivírus corporativo e implementação de rotinas de backup com Veeam e nuvem.</p> </div>
+                        <div class="service-card"> <i class="fa-solid fa-users-gear"></i> <h3>Redes e Usuários</h3> <p>Gerenciamento de Active Directory (AD), permissões de acesso e aplicação de Políticas de Grupo (GPO).</p> </div>
+                        <div class="service-card"> <i class="fa-solid fa-headset"></i> <h3>Suporte e Infraestrutura</h3> <p>Manutenção de computadores, e-mail corporativo, impressoras em rede e atualizações em sites.</p> </div>
+                    </div>
+                </div>
+                <div id="residencial" class="tab-content">
+                    <p class="category-description">Suporte técnico especializado para resolver seus problemas de tecnologia em casa, otimizando seus equipamentos para trabalho, estudo e lazer.</p>
+                    <div class="services-grid">
+                        <div class="service-card"> <i class="fa-solid fa-computer"></i> <h3>Suporte a Computadores</h3> <p>Montagem, upgrade, formatação, remoção de vírus e otimização para deixar seu PC ou notebook mais rápido.</p> </div>
+                        <div class="service-card"> <i class="fa-solid fa-wifi"></i> <h3>Rede Wi-Fi e Conectividade</h3> <p>Instalação e configuração de roteadores e repetidores para garantir a melhor cobertura de sinal na sua casa.</p> </div>
+                        <div class="service-card"> <i class="fa-solid fa-network-wired"></i> <h3>Estrutura de Rede Cabeada</h3> <p>Montagem e reparo de cabos de rede e configuração de redes locais (LANs) para máxima estabilidade.</p> </div>
+                        <div class="service-card"> <i class="fa-solid fa-toolbox"></i> <h3>Diagnóstico e Reparos</h3> <p>Solução de problemas de hardware e software (computador não liga, tela azul, lentidão, etc.).</p> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Por que escolher a Emitza?</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Fale diretamente com especialistas que entendem sua necessidade. Oferecemos um suporte próximo e dedicado, sem burocracia.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <h3>Pós-Venda Proativo</h3>
+                    <p>Nosso trabalho não termina na entrega. Acompanhamos os resultados e garantimos que sua TI continue funcionando perfeitamente.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Foco em PMEs</h3>
+                    <p>Entendemos os desafios de pequenas e médias empresas, oferecendo soluções de alto nível com um custo-benefício real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Vamos tirar sua ideia do papel?</h2>
+            <p>Seja para proteger sua empresa ou otimizar sua casa, estamos prontos para te ajudar. Entre em contato e vamos conversar sobre seu projeto.</p>
+            <a href="{% url 'contato' %}" class="cta-button">Fale com um Especialista</a>
+        </div>
+    </section>
+{% endblock %}

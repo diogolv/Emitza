@@ -1,0 +1,81 @@
+{% extends 'core/base_publica.html' %}
+{% block title %}Nossos Serviços{% endblock %}
+{% block content %}
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>Nossos Serviços</h1>
+            <p>Selecione a categoria para ver os detalhes de cada solução.</p>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="empresas">Para Empresas e Escritórios</button>
+                <button class="tab-button" data-tab="residencial">Para Sua Casa e Home Office</button>
+            </div>
+
+            <div class="tab-content-wrapper">
+                
+                <div id="empresas" class="tab-content active">
+                    <div class="service-detail-list">
+                        <h3>Gestão e Monitoramento de Servidores</h3>
+                        <ul>
+                            <li>Monitoramento proativo de performance e disponibilidade com Zabbix.</li>
+                            <li>Acompanhamento da saúde de servidores físicos e virtuais.</li>
+                        </ul>
+                        
+                        <h3>Segurança de Rede e Dados</h3>
+                        <ul>
+                            <li>Administração de Firewall para proteção contra ameaças externas.</li>
+                            <li>Gerenciamento centralizado de antivírus corporativo (ex: Bitdefender).</li>
+                            <li>Implementação e gestão de rotinas de backup com Veeam, incluindo replicação para a nuvem.</li>
+                        </ul>
+
+                        <h3>Administração de Redes e Usuários</h3>
+                        <ul>
+                            <li>Gerenciamento de Active Directory (AD): criação de usuários, permissões de acesso e pastas.</li>
+                            <li>Criação e aplicação de Políticas de Grupo (GPO) para padronização e segurança.</li>
+                        </ul>
+
+                        <h3>Suporte e Infraestrutura Geral</h3>
+                        <ul>
+                            <li>Configuração e manutenção de e-mail corporativo.</li>
+                            <li>Manutenção e suporte para computadores e notebooks da equipe.</li>
+                            <li>Instalação e configuração de impressoras e periféricos em rede.</li>
+                            <li>Pequenas atualizações e modificações em sites institucionais.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="residencial" class="tab-content">
+                    <div class="service-detail-list">
+                        <h3>Suporte a Computadores e Notebooks</h3>
+                        <ul>
+                            <li>Montagem, upgrade e manutenção de computadores.</li>
+                            <li>Formatação e instalação de sistemas operacionais (Windows, Linux) e softwares essenciais.</li>
+                            <li>Remoção de vírus, malwares e otimização para deixar seu computador mais rápido.</li>
+                            <li>Diagnóstico e solução de problemas de hardware e software (não liga, tela azul, etc.).</li>
+                        </ul>
+
+                        <h3>Rede Wi-Fi e Conectividade</h3>
+                        <ul>
+                            <li>Instalação e configuração de roteadores, modems e repetidores de sinal.</li>
+                            <li>Configuração de impressoras e outros dispositivos na sua rede sem fio.</li>
+                        </ul>
+
+                        <h3>Estrutura de Rede Cabeada</h3>
+                        <ul>
+                            <li>Montagem e crimpagem de cabos de rede (Cat5e, Cat6).</li>
+                            <li>Diagnóstico e reparo de problemas de conexão via cabo.</li>
+                            <li>Configuração de redes locais (LANs) para conectar múltiplos dispositivos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

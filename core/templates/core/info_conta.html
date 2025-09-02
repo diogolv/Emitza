@@ -1,0 +1,21 @@
+{% extends 'core/base_cliente.html' %}
+{% block title %}Minha Conta{% endblock %}
+{% block client_content %}
+    <h1>Minhas Informações</h1>
+    <div class="profile-card">
+        <h3>Detalhes da Conta</h3>
+        <p><strong>Nome Completo:</strong> {{ user.get_full_name|default:"Não informado" }}</p>
+        <p><strong>Usuário:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+    <div class="profile-card">
+        <h3>Detalhes do Contrato</h3>
+        <p><strong>Tipo de Conta:</strong> {{ user.perfil.get_tipo_conta_display }}</p>
+        <p><strong>Total de Chamados Abertos:</strong> {{ contagem_chamados }}</p>
+    </div>
+    <div class="profile-card">
+        <h3>Ações</h3>
+        <p>Mantenha sua conta segura alterando sua senha regularmente.</p>
+        <a href="{% url 'password_change' %}" class="cta-button">Trocar minha senha</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'core/base_cliente.html' %}
+{% block title %}Meus Chamados{% endblock %}
+{% block client_content %}
+    <h1>Meus Chamados</h1>
+    <p>Aqui você pode visualizar o histórico e o status de todas as suas solicitações.</p>
+    {% if chamados %}
+        <table class="chamados-table">
+            <thead>
+                <tr>
+                    <th>Título</th> <th>Tipo de Serviço</th> <th>Prioridade</th> <th>Status</th> <th>Data de Abertura</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chamado in chamados %}
+                <tr>
+                    <td>{{ chamado.titulo }}</td>
+                    <td>{{ chamado.get_tipo_servico_display }}</td>
+                    <td>{{ chamado.get_prioridade_display }}</td>
+                    <td><span class="status status-{{ chamado.status }}">{{ chamado.get_status_display }}</span></td>
+                    <td>{{ chamado.data_criacao|date:"d/m/Y H:i" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p style="margin-top: 20px;">Você ainda não abriu nenhum chamado.</p>
+    {% endif %}
+    <a href="{% url 'criar_chamado' %}" class="cta-button" style="margin-top: 30px;">Abrir Novo Chamado</a>
+{% endblock %}

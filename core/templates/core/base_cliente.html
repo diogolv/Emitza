@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Área do Cliente{% endblock %} - Emitza</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'imagens/favicon.ico' %}" sizes="any">
+</head>
+<body>
+    <div class="client-area-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="{% static 'imagens/logo-emitza.png' %}" alt="Logo Emitza" class="sidebar-logo">
+                <h3>Olá, {{ user.first_name|default:user.username }}</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="{% url 'area_cliente' %}">Início</a></li>
+                <li><a href="{% url 'info_conta' %}">Minha Conta</a></li>
+                <li><a href="{% url 'lista_chamados' %}">Acompanhar Chamados</a></li>
+                <li><a href="{% url 'criar_chamado' %}">Abrir Chamado</a></li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            {% block client_content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

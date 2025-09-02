@@ -1,0 +1,11 @@
+{% extends 'core/base_cliente.html' %}
+{% block title %}Abrir Novo Chamado{% endblock %}
+{% block client_content %}
+    <h1>Abrir Novo Chamado</h1>
+    <p>Por favor, descreva seu problema ou solicitação com o máximo de detalhes possível.</p>
+    <form method="post" class="chamado-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="cta-button">Enviar Chamado</button>
+    </form>
+{% endblock %}

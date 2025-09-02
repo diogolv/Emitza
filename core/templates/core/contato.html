@@ -1,0 +1,16 @@
+{% extends 'core/base_publica.html' %}
+{% block title %}Contato{% endblock %}
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <p>Tem uma ideia, um projeto ou um desafio para nós? Adoraríamos conversar sobre como podemos ajudar. Preencha o formulário abaixo ou nos envie um email.</p>
+        <form name="contact" method="POST" data-netlify="true"> <input type="text" name="name" placeholder="Seu Nome Completo" required>
+            <input type="email" name="email" placeholder="Seu Melhor Email" required>
+            <input type="text" name="subject" placeholder="Assunto da Mensagem">
+            <textarea name="message" rows="7" placeholder="Digite sua mensagem aqui..." required></textarea>
+            <button type="submit" class="cta-button">Enviar Mensagem</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

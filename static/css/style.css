@@ -1,0 +1,943 @@
+/* ============================================= */
+/* == ARQUIVO CSS COMPLETO, LIMPO E ORGANIZADO == */
+/* ============================================= */
+
+/* ===== GERAL E RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px; /* Altura fixa para o cabeçalho */
+  padding: 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+footer {
+    background: #1e1e1e; /* Um preto/cinza escuro mais elegante */
+    color: #a0a0a0;      /* CORRIGIDO: Cor de texto padrão clara */
+    padding-top: 60px;
+    margin-top: 40px;
+    /* REMOVIDO: text-align: center; para não conflitar com o grid */
+}
+
+.footer-content {
+    display: grid;
+    /* Esta linha está correta e define as 4 colunas */
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    padding-bottom: 50px;
+     /* Garante que o texto dentro das colunas comece à esquerda */
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 20px;
+    /*display: block;  Garante alinhamento correto */
+}
+
+.footer-content h4 {
+    color: #ffffff; /* CORRIGIDO: Títulos em branco para destaque no fundo escuro */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    line-height: 1.7;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #a0a0a0; /* CORRIGIDO: Links em cinza claro */
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #39c43b; /* Seu verde no hover */
+}
+
+.footer-contact p {
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    background: #000000; /* Fundo preto para a barra inferior */
+    border-top: 1px solid #333; /* CORRIGIDO: Borda escura que combina */
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-social a {
+    color: #a0a0a0; /* CORRIGIDO: Ícones sociais em cinza claro */
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #39c43b; /* Seu verde no hover */
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header .logo img {
+  height: 60px; /* Ajuste o tamanho da sua logo aqui */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #39c43b;
+}
+
+/* ===== ESTILOS DE SEÇÃO PRINCIPAIS (Home Page) ===== */
+.hero {
+  background: #ffffff;
+  text-align: center;
+  padding: 80px 0;
+}
+
+/* ===== SEÇÃO HERO COM IMAGEM DE FUNDO ===== */
+.hero-bg {
+    position: relative; /* Necessário para o overlay funcionar */
+    background-image: url('../imagens/hero-background.jpg'); /* Aponta para a sua nova imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Efeito parallax legal ao rolar */
+    padding: 120px 0 160px 0; /* Aumenta o espaço vertical */
+    color: #ffffff; /* Define a cor do texto padrão para branco */
+}
+
+/* Camada escura por cima da imagem para dar contraste */
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Cor preta com 60% de opacidade */
+    z-index: 1; /* Coloca o overlay entre a imagem e o texto */
+}
+
+/* Garante que o conteúdo fique na frente do overlay */
+.hero-bg .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: 3.2rem; /* Um pouco maior para mais impacto */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra no texto para legibilidade */
+}
+
+.hero p {
+    color: #eeeeee;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  display: inline-block;
+  background: #39c43b;
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #2b9d2e; /* Tom de verde um pouco mais escuro */
+}
+
+.services-section {
+  padding: 60px 0;
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #39c43b;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+}
+
+.service-card i {
+  font-size: 45px; /* 1. Define o tamanho do ícone. É um ótimo ponto de partida! */
+  color: #39c43b; /* 2. Aplica a sua cor verde exata. */
+  margin-bottom: 20px; /* 3. Adiciona o mesmo espaço abaixo do ícone que tínhamos antes. */
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.ai-section {
+  background-color: #39c43b;
+  color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.ai-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.ai-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.ai-section .cta-button {
+  background-color: #ffffff;
+  color: #39c43b;
+  font-weight: bold;
+}
+
+.ai-section .cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* ===== ESTILOS DE PÁGINAS INTERNAS (Sobre, Serviços, Contato) ===== */
+.page-hero {
+  background: #39c43b;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.service-detail {
+  padding: 60px 0;
+}
+
+.service-detail h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-detail p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+}
+
+.alt-bg {
+  background-color: #ffffff;
+}
+
+.about-content {
+  padding: 60px 0;
+}
+
+.about-content h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-content > .container > p {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.7;
+  color: #555;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.value-card {
+  background: #fff;
+  padding: 30px;
+  border-left: 5px solid #39c43b;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  color: #666;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+form button {
+  display: inline-block;
+  background: #39c43b;
+  color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background: #2b9d2e;
+}
+
+/* ===== RODAPÉ (FOOTER) ===== */
+footer {
+  background: #333;
+  color: #a0a0a0;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 40px;
+}
+
+/* ===== MENU MOBILE E RESPONSIVIDADE ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Para Tablets */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Para Celulares */
+@media (max-width: 768px) {
+  /* Regras de layout que já tínhamos */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .ai-content h2 {
+    font-size: 2rem;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+    .footer-content, .footer-bottom .container {
+        text-align: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+  /* NOVAS REGRAS DO MENU HAMBÚRGUER */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.95
+    ); /* Fundo branco com um pouco de transparência */
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  nav.active ul {
+    display: flex;
+  }
+  nav.active ul li {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+/* Estilo para o botão de Login no menu */
+.login-button {
+  background-color: #39c43b; /* Sua cor verde */
+  color: white !important; /* !important para sobrepor a cor padrão do link */
+  padding: 8px 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2b9d2e; /* Seu verde mais escuro */
+  color: white !important;
+}
+
+/* ===== PÁGINA DE LOGIN CUSTOMIZADA ===== */
+.login-body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.login-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.login-logo {
+  height: 60px;
+  margin-bottom: 20px;
+}
+.login-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+.login-container p {
+  margin-bottom: 30px;
+  color: #666;
+}
+.login-container .input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.login-container .input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.login-container .input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.login-container button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #39c43b;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.login-container button:hover {
+  background: #2b9d2e;
+}
+.form-errors {
+  background: #ffe0e0;
+  color: #c00;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===== ÁREA DO CLIENTE ===== */
+.client-area-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+.sidebar { width: 260px; background: #333; color: #fff; display: flex; flex-direction: column; flex-shrink: 0; }
+
+.sidebar-header { padding: 20px; text-align: center; border-bottom: 1px solid #34495e; }
+
+
+.sidebar-logo { height: 50px; margin-bottom: 15px; }
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: #eee;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  transition: background 0.3s ease;
+}
+.sidebar-menu li a:hover {
+  background: #39c43b;
+  color: #fff;
+}
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table thead tr {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+}
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.chamados-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+}
+.chamados-table thead tr {
+  background-color: #34495e;
+  color: #fff;
+  text-align: left;
+}
+.chamados-table th,
+.chamados-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+.chamado-form {
+  margin-top: 20px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+}
+.chamado-form p {
+  margin-bottom: 20px;
+}
+.chamado-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.chamado-form input,
+.chamado-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+.status-aberto {
+  background: #3498db;
+}
+.status-em_andamento {
+  background: #f1c40f;
+}
+.status-fechado {
+  background: #2ecc71;
+}
+
+/* Estilos para os cards da página 'Minha Conta' */
+.profile-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.profile-card h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.profile-card p {
+    line-height: 1.8;
+}
+
+/* ============================================= */
+/* == ESTILOS PARA A INTERFACE DE ABAS (TABS) == */
+/* ============================================= */
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+}
+.tab-button {
+    padding: 15px 30px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Alinha a borda de baixo com a borda do container */
+    transition: all 0.3s ease;
+}
+.tab-button:hover {
+    color: #333;
+}
+.tab-button.active {
+    color: #39c43b;
+    border-bottom-color: #39c43b;
+}
+
+/* Esconde o conteúdo das abas inativas */
+.tab-content {
+    display: none;
+}
+/* Mostra o conteúdo da aba ativa */
+.tab-content.active {
+    display: block;
+}
+
+.category-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: -20px auto 40px auto;
+}
+
+/* Estilo para as listas detalhadas na página de serviços */
+.service-detail-list {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+}
+.service-detail-list h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.service-detail-list h3:first-child {
+    margin-top: 0;
+}
+.service-detail-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+.service-detail-list ul li {
+    font-size: 1.1rem;
+    color: #555;
+    padding: 10px 0 10px 25px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+.service-detail-list ul li:last-child {
+    border-bottom: none;
+}
+.service-detail-list ul li::before {
+    content: '\f058'; /* Código de um ícone de check do Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #39c43b;
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+
+/* ============================================= */
+/* == NOVOS ESTILOS PARA A HOME E RODAPÉ == */
+/* ============================================= */
+
+/* Seção "Por que nós?" */
+.why-us-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+.why-us-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+}
+.why-us-section .values-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para os valores */
+}
+.why-us-section .value-card {
+    background: none;
+    border: none;
+    text-align: center;
+}
+.why-us-section .value-card i {
+    font-size: 40px;
+    color: #39c43b;
+    margin-bottom: 20px;
+}
+.why-us-section .value-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Seção de CTA Final */
+.final-cta-section {
+    background-color: #2c3e50; /* Um azul/cinza escuro para destaque */
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+.final-cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.final-cta-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+.final-cta-section .cta-button {
+    background-color: #39c43b;
+}
+
+/* Rodapé (Footer) Melhorado */
+footer {
+    background: #1e1e1e;
+    color: #a0a0a0;
+    padding-top: 50px;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+.footer-content h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.footer-contact-link {
+    display: flex;
+    align-items: center;
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+.footer-contact-link:hover {
+    color: #39c43b;
+}
+.footer-contact-link i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.footer-social a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.footer-social a:hover {
+    color: #39c43b;
+}
+.footer-bottom {
+    background: #000;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+/* Responsividade para o rodapé */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-contact-link {
+        justify-content: center;
+    }
+}

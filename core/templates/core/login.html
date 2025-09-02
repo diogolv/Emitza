@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Emitza</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'imagens/favicon.ico' %}" sizes="any">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'imagens/logo-emitza.png' %}" alt="Logo da Emitza" class="login-logo">
+        </a>
+        <h2>Área do Cliente</h2>
+        <p>Acesse sua conta para continuar.</p>
+        <form method="post">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="input-group">
+                <label for="id_username">Usuário</label>
+                <input type="text" name="username" id="id_username" required>
+            </div>
+            <div class="input-group">
+                <label for="id_password">Senha</label>
+                <input type="password" name="password" id="id_password" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
